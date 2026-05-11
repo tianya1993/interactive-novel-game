@@ -1,4 +1,4 @@
-# 瀛樻。鏂囦欢锛堝寘鍚釜浜烘父鎴忚繘搴︼級
+# 鐎涙ɑ銆傞弬鍥︽閿涘牆瀵橀崥顐￠嚋娴滅儤鐖堕幋蹇氱箻鎼达讣绱?
 saves/
 
 # Python
@@ -9,11 +9,11 @@ __pycache__/
 dist/
 build/
 
-# 鏈湴閰嶇疆鏂囦欢锛堝寘鍚?API Key 绛夋晱鎰熶俊鎭級
+# 閺堫剙婀撮柊宥囩枂閺傚洣娆㈤敍鍫濆瘶閸?API Key 缁涘鏅遍幇鐔朵繆閹垽绱?
 config.json
 .claude/
 
-# 绯荤粺鏂囦欢
+# 缁崵绮洪弬鍥︽
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -26,3 +26,7 @@ desktop.ini
 
 # Node
 node_modules/
+
+# 璺紨鐩稿叧锛堜笉涓婁紶锛?
+slides.html
+璺紨瑙嗛鑴氭湰.md
