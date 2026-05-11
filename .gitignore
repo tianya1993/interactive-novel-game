@@ -1,0 +1,28 @@
+# 瀛樻。鏂囦欢锛堝寘鍚釜浜烘父鎴忚繘搴︼級
+saves/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# 鏈湴閰嶇疆鏂囦欢锛堝寘鍚?API Key 绛夋晱鎰熶俊鎭級
+config.json
+.claude/
+
+# 绯荤粺鏂囦欢
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
