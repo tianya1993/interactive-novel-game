@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浜掑姩灏忚娓告垙骞冲彴</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header id="main-header">
+      <h1 class="game-title">浜掑姩灏忚娓告垙</h1>
+      <p class="game-subtitle">鍘嗗彶绌胯秺 路 绯荤粺鏂?路 AI 椹卞姩</p>
+    </header>
+
+    <!-- 鐜╁鐘舵€佹爮 -->
+    <div class="player-hud" id="player-hud" style="display: none;">
+      <div class="player-info">
+        <div class="player-avatar" id="hud-avatar">娓?/div>
+        <div class="player-details">
+          <h3 id="hud-player-name">娓稿</h3>
+          <div class="player-level">Lv.1 鍐掗櫓鑰?/div>
+        </div>
+      </div>
+      <div class="player-stats">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1ed760" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <div class="stat-value" id="score">1000</div>
+          <div class="stat-label">绉垎</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b3b3b3" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="stat-value">0</div>
+          <div class="stat-label">鎴樻枟鍔?/div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b3b3b3" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="stat-value">0</div>
+          <div class="stat-label">鎴愬氨</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 涓昏彍鍗?-->
+    <div id="main-menu" class="game-types">
+      <div class="game-card" data-type="history">
+        <span class="game-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1ed760" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </span>
+        <h2>鍘嗗彶绌胯秺</h2>
+        <p>绌胯秺鍒板巻鍙叉椂鏈燂紝鏀瑰彉鍘嗗彶鎴栫敓瀛樺彂灞曘€備綘鍙互閫夋嫨鎴愪负鐨囧笣銆佸皢鍐涖€佽皨澹紝浣撻獙涓嶅悓鏈濅唬鐨勯浜戝彉骞汇€?/p>
+        <div class="game-tags">
+          <span class="tag">绌胯秺</span>
+          <span class="tag">鍘嗗彶</span>
+          <span class="tag">绛栫暐</span>
+        </div>
+      </div>
+      <div class="game-card" data-type="system">
+        <span class="game-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1ed760" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </span>
+        <h2>绯荤粺鏂?/h2>
+        <p>鑾峰緱绁炵绯荤粺锛岄€氳繃瀹屾垚浠诲姟鍗囩骇鍙樺己銆傜鍒般€侀€夋嫨銆佺绾х郴缁燂紝鍚勭绫诲瀷浠讳綘閫夋嫨銆?/p>
+        <div class="game-tags">
+          <span class="tag">绯荤粺</span>
+          <span class="tag">鍗囩骇</span>
+          <span class="tag">鐖芥枃</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="config-btn-wrapper">
+      <button class="btn-config" onclick="openSettings()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        AI 閰嶇疆
+      </button>
+    </div>
+
+    <!-- 鍓ф湰鍒楄〃 -->
+    <div id="script-list-modal" class="game-interface">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <h2 id="script-list-title">閫夋嫨鍓ф湰</h2>
+      </div>
+      <div id="script-list-content" class="script-list"></div>
+      <div style="text-align: center; margin-top: 30px;">
+        <button class="game-header-btn text-btn" onclick="closeScriptList()">鈫?杩斿洖棣栭〉</button>
+      </div>
+    </div>
+
+    <!-- 鍚嶇О杈撳叆 -->
+    <div id="name-input-modal" class="modal">
+      <div class="modal-content">
+        <h2>璁剧疆瑙掕壊鍚嶇О</h2>
+        <input type="text" id="player-name-input" placeholder="杈撳叆瑙掕壊鍚嶇О..." onkeypress="if(event.key==='Enter')confirmName()">
+        <div class="modal-actions">
+          <button class="primary" onclick="confirmName()">寮€濮嬫父鎴?/button>
+          <button class="secondary" onclick="backToMenuFromNameInput()">杩斿洖</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 鑷畾涔夊墽鏈?-->
+    <div id="custom-game-modal" class="modal">
+      <div class="modal-content">
+        <h2>鍒涗綔鏂板墽鏈?/h2>
+        <p style="color: var(--ink-muted); margin-bottom: var(--space-md); font-size: 14px;">鎻忚堪浣犳兂瑕佺殑娓告垙璁惧畾锛孉I 浼氫负浣犵敓鎴愮嫭鐗圭殑浣撻獙</p>
+        <label class="modal-label">鍓ф湰鍚嶇О</label>
+        <input type="text" id="custom-game-name" placeholder="渚嬪锛氭湯鏃ユ眰鐢熴€佷慨浠欎笘鐣屻€佽禌鍗氭湅鍏?..">
+        <label class="modal-label">鍓ф湰璁惧畾锛堝彲閫夛級</label>
+        <textarea id="custom-game-desc" placeholder="鎻忚堪涓栫晫瑙傘€佽鑹茶韩浠姐€佺洰鏍囩瓑..."></textarea>
+        <label class="modal-label">瑙掕壊鍚嶇О</label>
+        <input type="text" id="custom-player-name" placeholder="杈撳叆瑙掕壊鍚嶇О...">
+        <div class="modal-actions">
+          <button class="primary" onclick="startCustomGame()">寮€濮嬫父鎴?/button>
+          <button class="secondary" onclick="closeCustomGameModal()">鍙栨秷</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI 璁剧疆 -->
+    <div id="ai-settings-modal" class="modal">
+      <div class="modal-content ai-settings">
+        <h2>AI 閰嶇疆</h2>
+        <label class="modal-label">AI 鏈嶅姟鍟?/label>
+        <select id="ai-provider-select" onchange="onProviderChange()">
+          <option value="siliconflow">SiliconFlow锛堟帹鑽愶紝鍏嶈垂棰濆害锛?/option>
+          <option value="deepseek">DeepSeek</option>
+          <option value="openai">OpenAI</option>
+          <option value="custom">鑷畾涔?API</option>
+        </select>
+        <div id="provider-info" style="color: var(--ink-subtle); font-size: 12px; margin-bottom: var(--space-md);"></div>
+        <div id="custom-api-url-div" style="display: none;">
+          <label class="modal-label">API URL</label>
+          <input type="text" id="custom-api-url" placeholder="https://api.example.com/v1/chat/completions">
+        </div>
+        <label class="modal-label">妯″瀷閫夋嫨</label>
+        <select id="ai-model-select"><option value="">鍔犺浇涓?..</option></select>
+        <label class="modal-label">API Key</label>
+        <input type="password" id="api-key-input" placeholder="杈撳叆 API Key">
+        <label style="color: var(--ink-muted); font-size: 14px; cursor: pointer; display: flex; align-items: center; margin-bottom: var(--space-lg);">
+          <input type="checkbox" id="use-ai-checkbox"> 鍚敤 AI 鍔熻兘
+        </label>
+        <div class="modal-actions">
+          <button class="primary" onclick="saveSettings()">淇濆瓨璁剧疆</button>
+          <button class="secondary" onclick="closeSettings()">鍙栨秷</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 娓告垙鐣岄潰 -->
+    <div id="game-interface" class="game-interface">
+      <div class="game-header">
+        <button class="game-header-btn" onclick="returnToHome()" title="杩斿洖棣栭〉">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </button>
+        <button class="game-header-btn" onclick="exportSave()" title="瀵煎嚭瀛樻。">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </button>
+        <button class="game-header-btn" onclick="importSave()" title="瀵煎叆瀛樻。">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </button>
+        <button class="game-header-btn" onclick="backToMenu()" title="閫€鍑?>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div id="story-display" class="story-display">
+        <div id="dialogue-history" class="dialogue-history"></div>
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="杈撳叆浣犵殑琛屽姩鎸囦护...">
+          <button class="send-btn" id="send-btn">鍙戦€?/button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
