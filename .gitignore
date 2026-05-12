@@ -1,4 +1,4 @@
-# 瀛樻。鏂囦欢锛堝寘鍚釜浜烘父鎴忚繘搴︼級
+# 存档文件（包含个人游戏进度）
 saves/
 
 # Python
@@ -9,11 +9,11 @@ __pycache__/
 dist/
 build/
 
-# 鏈湴閰嶇疆鏂囦欢锛堝寘鍚?API Key 绛夋晱鎰熶俊鎭級
+# 本地配置文件（包含 API Key 等敏感信息）
 config.json
 .claude/
 
-# 绯荤粺鏂囦欢
+# 系统文件
 .DS_Store
 Thumbs.db
 desktop.ini
