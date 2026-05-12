@@ -26,3 +26,7 @@ desktop.ini
 
 # Node
 node_modules/
+
+# 路演相关（不上传）
+slides.html
+路演视频脚本.md
